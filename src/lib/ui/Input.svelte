@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { translate } from '$lib/translate';
   import { resizeObserver } from '$lib/utils/resizeObserver';
 
   import Button from './Button.svelte';
@@ -56,6 +55,11 @@
     value = '';
     onChange?.('');
   };
+
+  // TODO
+  export const translate = (key: 'common.clear') => {
+    return 'Clear';
+  };
 </script>
 
 <label class="input-label" data-testId={`${testId}.Container`}>
@@ -109,12 +113,12 @@
       {/if}
       <slot name="end" />
       {#if clearable && !!value}
-        <div class="flex-center" title={$translate('common.clear')}>
+        <div class="flex-center" title={translate('common.clear')}>
           <Button
             on:click={clearValue}
             appearance="link"
             color={error ? 'danger' : 'secondary'}
-            aria-label={$translate('common.clear')}
+            aria-label={translate('common.clear')}
             testId={`${testId}.ClearButton`}
             {disabled}
           >

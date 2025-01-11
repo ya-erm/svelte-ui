@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { translate } from '$lib/translate';
   import Button from '$lib/ui/Button.svelte';
   import IntersectionObserver from '$lib/ui/IntersectionObserver.svelte';
 
@@ -12,6 +11,10 @@
   const showMore = () => {
     limit = Math.min(total, limit + step);
   };
+
+  export const translate = (key: 'transactions.show_more') => {
+    return 'Show more';
+  };
 </script>
 
 <IntersectionObserver element={showMoreContainer} on:intersect={showMore}>
@@ -21,7 +24,7 @@
     {#if limit < total}
       <div class="flex-col px-1 pb-1">
         <Button color="white" on:click={showMore}>
-          {$translate('transactions.show_more')}
+          {translate('transactions.show_more')}
         </Button>
       </div>
     {/if}

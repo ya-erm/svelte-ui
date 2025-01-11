@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { translate } from '$lib/translate';
   import { longPress } from '$lib/utils/longPress';
 
   import Button from './Button.svelte';
@@ -48,6 +47,35 @@
       selected = checked ? [...selected, id] : selected.filter((t) => t !== id);
     }
   };
+
+  // TODO
+  export const translate = (
+    key:
+      | 'tags.title'
+      | 'tags.add_modal_header'
+      | 'tags.edit_modal_header'
+      | 'common.add'
+      | 'common.delete'
+      | 'common.save'
+      | 'common.cancel',
+  ) => {
+    switch (key) {
+      case 'tags.title':
+        return 'Title';
+      case 'tags.add_modal_header':
+        return 'Add tag';
+      case 'tags.edit_modal_header':
+        return 'Edit tag';
+      case 'common.add':
+        return 'Add';
+      case 'common.save':
+        return 'Save';
+      case 'common.cancel':
+        return 'Cancel';
+      case 'common.delete':
+        return 'Delete';
+    }
+  };
 </script>
 
 <div class="flex flex-wrap container" data-testId="TagsContainer">
@@ -65,7 +93,7 @@
   {/each}
   {#if !readOnly}
     <button class="tag add" type="button" on:click={() => handleOpenModal(null)} data-testId="AddTagButton">
-      {$translate('common.add')}
+      {translate('common.add')}
     </button>
   {/if}
 </div>
@@ -73,22 +101,22 @@
 {#if !readOnly}
   <Modal
     {opened}
-    header={$translate(mode === 'add' ? 'tags.add_modal_header' : 'tags.edit_modal_header')}
+    header={translate(mode === 'add' ? 'tags.add_modal_header' : 'tags.edit_modal_header')}
     on:close={() => (opened = false)}
   >
     <form on:submit|preventDefault={handleSubmit} class="flex-col gap-1" data-testId="AddTagForm">
-      <Input label={$translate('tags.title')} bind:value={title} name="title" required />
+      <Input label={translate('tags.title')} bind:value={title} name="title" required />
 
       <div class="flex gap-1">
         <div class="flex-col flex-1">
           {#if mode === 'edit'}
-            <Button color="danger" text={$translate('common.delete')} on:click={handleDelete} />
+            <Button color="danger" text={translate('common.delete')} on:click={handleDelete} />
           {:else}
-            <Button color="secondary" on:click={() => (opened = false)} text={$translate('common.cancel')} />
+            <Button color="secondary" on:click={() => (opened = false)} text={translate('common.cancel')} />
           {/if}
         </div>
         <div class="flex-col flex-1">
-          <Button text={$translate(mode === 'add' ? 'common.add' : 'common.save')} type="submit" />
+          <Button text={translate(mode === 'add' ? 'common.add' : 'common.save')} type="submit" />
         </div>
       </div>
     </form>

@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { theme } from './theme';
   import ThemeProvider from '$lib/ui/ThemeProvider.svelte';
+
+  import { theme } from './theme';
 </script>
 
 <ThemeProvider theme={$theme}>

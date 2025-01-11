@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { translate } from '$lib/translate';
-
   export let text: string;
   export let optional: boolean = false;
   export let disabled: boolean = false;
@@ -13,6 +11,11 @@
 
   $: asPlaceholder = v2 && !value;
   $: asLabel = v2 && !asPlaceholder;
+
+  // TODO:
+  export const translate = (key: 'common.optional') => {
+    return 'Optional';
+  };
 </script>
 
 <span
@@ -27,7 +30,7 @@
 >
   <span class="text">{text}</span>
   {#if optional}
-    <span class="optional">({$translate('common.optional')})</span>
+    <span class="optional">({translate('common.optional')})</span>
   {/if}
 </span>
 
