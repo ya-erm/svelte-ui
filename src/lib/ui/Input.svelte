@@ -25,6 +25,7 @@
   export let value: string | null = null;
   export let onChange: ((value: string) => void) | null = null;
 
+  export let align: 'left' | 'center' | 'right' = 'left';
   export let icon: string | null = null;
   export let endText: string | null = null;
   export let clearable = false;
@@ -83,6 +84,8 @@
       data-testId={testId}
       class:error={!!error}
       class:withIcon={icon}
+      class:align-center={align === 'center'}
+      class:align-right={align === 'right'}
       class:clearable
       {placeholder}
       {minlength}
@@ -93,6 +96,7 @@
       {value}
       {list}
       {name}
+      {...$$restProps}
     />
     <div class="end-slot flex items-center" bind:this={endSlot} use:resizeObserver={{ onResize: onEndSlotResize }}>
       {#if type === 'color'}
@@ -150,6 +154,7 @@
     font-size: 1rem;
     border-radius: 0.75rem;
     padding: 0.75rem;
+    min-height: 2.5rem;
     border: 1px solid var(--border-color);
     background-color: var(--header-background-color);
     color: var(--text-color);
@@ -169,6 +174,9 @@
   }
   input:focus {
     border: 1px solid var(--active-color);
+  }
+  input:focus-visible {
+    outline: 1px solid var(--active-color);
   }
   input.error {
     color: var(--red-color);
@@ -209,5 +217,12 @@
   .error-text {
     font-size: 0.8rem;
     color: var(--red-color);
+  }
+
+  .align-center {
+    text-align: center;
+  }
+  .align-right {
+    text-align: right;
   }
 </style>

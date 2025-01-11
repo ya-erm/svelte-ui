@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/ya-erm/svelte-ui"
   },
-  "version": "0.0.1",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite dev --port 5172",
     "build": "vite build && npm run package",
@@ -30,12 +30,84 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    },
     "./utils": {
       "types": "./dist/utils/index.d.ts"
+    },
+    "./Button": {
+      "types": "./dist/ui/Button.svelte.d.ts",
+      "svelte": "./dist/ui/Button.svelte"
+    },
+    "./ButtonBase": {
+      "types": "./dist/ui/ButtonBase.svelte.d.ts",
+      "svelte": "./dist/ui/ButtonBase.svelte"
+    },
+    "./Checkbox": {
+      "types": "./dist/ui/Checkbox.svelte.d.ts",
+      "svelte": "./dist/ui/Checkbox.svelte"
+    },
+    "./Icon": {
+      "types": "./dist/ui/Icon.svelte.d.ts",
+      "svelte": "./dist/ui/Icon.svelte"
+    },
+    "./Input": {
+      "types": "./dist/ui/Input.svelte.d.ts",
+      "svelte": "./dist/ui/Input.svelte"
+    },
+    "./InputLabel": {
+      "types": "./dist/ui/InputLabel.svelte.d.ts",
+      "svelte": "./dist/ui/InputLabel.svelte"
+    },
+    "./InputList": {
+      "types": "./dist/ui/InputList.svelte.d.ts",
+      "svelte": "./dist/ui/InputList.svelte"
+    },
+    "./IntersectionObserver": {
+      "types": "./dist/ui/IntersectionObserver.svelte.d.ts",
+      "svelte": "./dist/ui/IntersectionObserver.svelte"
+    },
+    "./Modal": {
+      "types": "./dist/ui/Modal.svelte.d.ts",
+      "svelte": "./dist/ui/Modal.svelte"
+    },
+    "./MultiSwitch": {
+      "types": "./dist/ui/MultiSwitch.svelte.d.ts",
+      "svelte": "./dist/ui/MultiSwitch.svelte"
+    },
+    "./Portal": {
+      "types": "./dist/ui/Portal.svelte.d.ts",
+      "svelte": "./dist/ui/Portal.svelte"
+    },
+    "./ShowMoreContainer": {
+      "types": "./dist/ui/ShowMoreContainer.svelte.d.ts",
+      "svelte": "./dist/ui/ShowMoreContainer.svelte"
+    },
+    "./Spoiler": {
+      "types": "./dist/ui/Spoiler.svelte.d.ts",
+      "svelte": "./dist/ui/Spoiler.svelte"
+    },
+    "./SpoilerToggle": {
+      "types": "./dist/ui/SpoilerToggle.svelte.d.ts",
+      "svelte": "./dist/ui/SpoilerToggle.svelte"
+    },
+    "./Switch": {
+      "types": "./dist/ui/Switch.svelte.d.ts",
+      "svelte": "./dist/ui/Switch.svelte"
+    },
+    "./Tags": {
+      "types": "./dist/ui/Tags.svelte.d.ts",
+      "svelte": "./dist/ui/Tags.svelte"
+    },
+    "./TextArea": {
+      "types": "./dist/ui/TextArea.svelte.d.ts",
+      "svelte": "./dist/ui/TextArea.svelte"
+    },
+    "./ThemeProvider": {
+      "types": "./dist/ui/ThemeProvider.svelte.d.ts",
+      "svelte": "./dist/ui/ThemeProvider.svelte"
+    },
+    "./Typography": {
+      "types": "./dist/ui/Typography.svelte.d.ts",
+      "svelte": "./dist/ui/Typography.svelte"
     }
   },
   "peerDependencies": {
