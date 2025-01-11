@@ -49,7 +49,7 @@
   };
 
   // TODO
-  export const translate = (
+  export let translate = (
     key:
       | 'tags.title'
       | 'tags.add_modal_header'
@@ -58,7 +58,7 @@
       | 'common.delete'
       | 'common.save'
       | 'common.cancel',
-  ) => {
+  ): string => {
     switch (key) {
       case 'tags.title':
         return 'Title';

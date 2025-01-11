@@ -4,7 +4,7 @@
   export let hidden: boolean;
   export let withoutText: boolean = false;
 
-  export const translate = (key: 'common.show' | 'common.hide') => {
+  export let translate = (key: 'common.show' | 'common.hide'): string => {
     return key === 'common.show' ? 'Show' : 'Hide';
   };
 </script>

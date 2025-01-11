@@ -13,7 +13,7 @@
   $: asLabel = v2 && !asPlaceholder;
 
   // TODO:
-  export const translate = (key: 'common.optional') => {
+  export let translate = (key: 'common.optional'): string => {
     return 'Optional';
   };
 </script>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resizeObserver } from '$lib/utils/resizeObserver';
+  import type { GetTranslateKeys } from '$lib/utils/translate';
 
   import Button from './Button.svelte';
   import Icon from './Icon.svelte';
@@ -57,14 +58,14 @@
   };
 
   // TODO
-  export const translate = (key: 'common.clear') => {
+  export let translate = (key: 'common.clear' | GetTranslateKeys<InputLabel>): string => {
     return 'Clear';
   };
 </script>
 
 <label class="input-label" data-testId={`${testId}.Container`}>
   {#if label}
-    <InputLabel text={label} {optional} {disabled} {error} testId={`${testId}.Label`} {v2} {value} />
+    <InputLabel text={label} {optional} {disabled} {error} testId={`${testId}.Label`} {v2} {value} {translate} />
   {/if}
   <div class="input-container flex-col">
     <div
