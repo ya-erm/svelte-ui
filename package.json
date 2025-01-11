@@ -1,5 +1,11 @@
 {
   "name": "@ya-erm/svelte-ui",
+  "description": "Svelte UI components",
+  "author": "Yaroslav Ermilov",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ya-erm/svelte-ui"
+  },
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port 5172",
