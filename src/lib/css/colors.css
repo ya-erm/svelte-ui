@@ -1,0 +1,49 @@
+:root {
+  --ON: initial;
+  --OFF: ;
+}
+
+.themed {
+  --dark-theme: var(--OFF);
+  --light-theme: var(--ON);
+
+  --primary-text-color: var(--light-theme, black) var(--dark-theme, white);
+  --secondary-text-color: var(--light-theme, #7f7f7f) var(--dark-theme, #7f7f7f);
+  --active-text-color: var(--light-theme, #2f95dc) var(--dark-theme, white);
+
+  --background-color: var(--light-theme, #f2f2f2) var(--dark-theme, black);
+  --secondary-background-color: var(--light-theme, white) var(--dark-theme, #121212);
+  /* deprecated, use `--secondary-background-color` instead */
+  --header-background-color: var(--secondary-background-color);
+
+  --hover-background-color: var(--light-theme, #eff4f9) var(--dark-theme, #1b1b1c);
+
+  --border-color: var(--light-theme, #d8d8d8) var(--dark-theme, #272729);
+
+  --red-color: var(--light-theme, #dc3545) var(--dark-theme, #dc3545);
+  --orange-color: var(--light-theme, orange) var(--dark-theme, orange);
+  --green-color: var(--light-theme, #28a745) var(--dark-theme, #28a745);
+  --white-color: var(--light-theme, white) var(--dark-theme, white);
+  --active-color: var(--light-theme, #2f95dc) var(--dark-theme, #2f95dc);
+}
+
+[data-theme='system'] {
+  @media (prefers-color-scheme: dark) {
+    --light-theme: var(--OFF);
+    --dark-theme: var(--ON);
+  }
+}
+
+[data-theme='dark'] {
+  --light-theme: var(--OFF);
+  --dark-theme: var(--ON);
+}
+
+[data-theme='light'] {
+  --dark-theme: var(--OFF);
+  --light-theme: var(--ON);
+}
+
+a {
+  color: var(--active-color);
+}
