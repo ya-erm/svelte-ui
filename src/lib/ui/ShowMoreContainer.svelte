@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '$lib/ui/Button.svelte';
   import IntersectionObserver from '$lib/ui/IntersectionObserver.svelte';
+  import { unexpectedCase } from '$lib/utils/unexpectedCase';
 
   export let limit: number;
   export let step: number;
@@ -12,8 +13,15 @@
     limit = Math.min(total, limit + step);
   };
 
-  export const translate = (key: 'transactions.show_more') => {
-    return 'Show more';
+  // TODO
+  export const translate = (key: 'common.show_more'): string => {
+    switch (key) {
+      case 'common.show_more':
+        return 'Show more';
+      default:
+        console.error(unexpectedCase(key));
+        return '';
+    }
   };
 </script>
 
@@ -23,8 +31,8 @@
     <div bind:this={showMoreContainer} class="show-more-before"></div>
     {#if limit < total}
       <div class="flex-col px-1 pb-1">
-        <Button color="white" on:click={showMore}>
-          {translate('transactions.show_more')}
+        <Button color="white" onClick={showMore}>
+          {translate('common.show_more')}
         </Button>
       </div>
     {/if}

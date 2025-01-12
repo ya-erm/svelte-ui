@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resizeObserver } from '$lib/utils/resizeObserver';
   import type { GetTranslateKeys } from '$lib/utils/translate';
+  import { unexpectedCase } from '$lib/utils/unexpectedCase';
 
   import Button from './Button.svelte';
   import Icon from './Icon.svelte';
@@ -59,7 +60,15 @@
 
   // TODO
   export let translate = (key: 'common.clear' | GetTranslateKeys<InputLabel>): string => {
-    return 'Clear';
+    switch (key) {
+      case 'common.clear':
+        return 'Clear';
+      case 'common.optional':
+        return 'Optional';
+      default:
+        console.error(unexpectedCase(key));
+        return '';
+    }
   };
 </script>
 
@@ -116,7 +125,7 @@
       {#if clearable && !!value}
         <div class="flex-center" title={translate('common.clear')}>
           <Button
-            on:click={clearValue}
+            onClick={clearValue}
             appearance="link"
             color={error ? 'danger' : 'secondary'}
             aria-label={translate('common.clear')}

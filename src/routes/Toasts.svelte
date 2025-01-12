@@ -18,8 +18,8 @@
   <Checkbox label="dismissible" bind:checked={dismissible} />
   <Input bind:value={message} />
   <div>
-    <Button text="Info" on:click={handleClick('info')} />
-    <Button text="Success" color="success" on:click={handleClick('success')} />
-    <Button text="Error" color="danger" on:click={handleClick('error')} />
+    <Button text="Info" onClick={handleClick('info')} />
+    <Button text="Success" color="success" onClick={handleClick('success')} />
+    <Button text="Error" color="danger" onClick={handleClick('error')} />
   </div>
 </div>

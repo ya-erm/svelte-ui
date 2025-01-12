@@ -172,7 +172,7 @@
           {#if clearable && !!value}
             <div class="flex-center">
               <Button
-                on:click={clearValue}
+                onClick={clearValue}
                 appearance="link"
                 color={error ? 'danger' : 'secondary'}
                 aria-label="Clear"
@@ -198,7 +198,7 @@
               <ButtonBase
                 tabindex="-1"
                 class="w-full"
-                on:click={() => {
+                onClick={() => {
                   selectedItemId = item.id;
                   handleConfirm();
                 }}
