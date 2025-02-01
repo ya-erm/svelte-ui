@@ -4,9 +4,9 @@
   "author": "Yaroslav Ermilov",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ya-erm/svelte-ui"
+    "url": "git+https://github.com/ya-erm/svelte-ui.git"
   },
-  "version": "0.0.10",
+  "version": "0.0.11",
   "scripts": {
     "dev": "vite dev --port 5172",
     "build": "vite build && npm run package",
@@ -33,6 +33,17 @@
     "./utils": {
       "types": "./dist/utils/index.d.ts",
       "svelte": "./dist/utils/index.js"
+    },
+    "./toasts": {
+      "types": "./dist/ui/toasts/index.d.ts"
+    },
+    "./toasts/Toasts": {
+      "types": "./dist/ui/toasts/Toasts.svelte.d.ts",
+      "svelte": "./dist/ui/toasts/Toasts.svelte"
+    },
+    "./toasts/Toast": {
+      "types": "./dist/ui/toasts/Toast.svelte.d.ts",
+      "svelte": "./dist/ui/toasts/Toast.svelte"
     },
     "./Button": {
       "types": "./dist/ui/Button.svelte.d.ts",
