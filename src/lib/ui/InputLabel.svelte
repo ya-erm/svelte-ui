@@ -58,8 +58,8 @@
   .as-label::before {
     content: '';
     position: absolute;
-    top: 0.5rem;
-    height: 1px;
+    top: calc(0.5rem - 1px);
+    height: 2px;
     width: calc(100% + 4px);
     margin-left: -2px;
     background: var(--header-background-color);

@@ -8,6 +8,7 @@
 
 <label class="red flex cursor-pointer items-center gap-0.5">
   <input
+    class="checkbox"
     type="checkbox"
     bind:checked
     {indeterminate}
@@ -19,3 +20,9 @@
   {/if}
   <slot />
 </label>
+
+<style>
+  .checkbox:focus-visible {
+    outline-color: var(--active-color);
+  }
+</style>

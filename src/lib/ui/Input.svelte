@@ -90,6 +90,7 @@
       {/if}
     </div>
     <input
+      class="input"
       bind:this={ref}
       on:input={handleChange}
       autocomplete={autocomplete ? 'on' : undefined}
@@ -123,7 +124,7 @@
       {/if}
       <slot name="end" />
       {#if clearable && !!value}
-        <div class="flex-center" title={translate('common.clear')}>
+        <div class="clear-button flex-center" title={translate('common.clear')}>
           <Button
             onClick={clearValue}
             appearance="link"
@@ -164,10 +165,10 @@
     margin: 0;
     margin-right: 0.5rem;
   }
-  input {
+  .input {
     font-size: 1rem;
     border-radius: 0.75rem;
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     min-height: 2.5rem;
     border: 1px solid var(--border-color);
     background-color: var(--header-background-color);
@@ -232,7 +233,12 @@
     font-size: 0.8rem;
     color: var(--red-color);
   }
-
+  .clear-button {
+    margin-right: 1px;
+  }
+  .clear-button > :global(button):focus-visible {
+    outline-offset: 0 !important;
+  }
   .align-center {
     text-align: center;
   }

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Checkbox from '$lib/ui/Checkbox.svelte';
   import Input from '$lib/ui/Input.svelte';
+  import InputLabel from '$lib/ui/InputLabel.svelte';
 
   let v2 = false;
   let withIcon = false;
@@ -26,4 +27,11 @@
   <Input label="Password" value="Password" type="password" {icon} {endText} {clearable} {v2} {disabled} />
   <Input label="Error" value="Value" error="Error text example" {icon} {endText} {clearable} {v2} {disabled} />
   <Input label="Color" type="color" {icon} {endText} {clearable} {v2} {disabled} />
+  <div class="flex-col gap-0.5">
+    <InputLabel text="Date and time" />
+    <div class="flex gap-1">
+      <Input type="date" {icon} {endText} {v2} {disabled} />
+      <Input type="time" {icon} {endText} {v2} {disabled} />
+    </div>
+  </div>
 </div>

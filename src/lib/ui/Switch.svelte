@@ -9,12 +9,14 @@
 </script>
 
 <label class="switch" class:active={checked}>
-  <input type="checkbox" {checked} on:change={handleChange} />
+  <input class="checkbox" type="checkbox" {checked} on:change={handleChange} />
   <div class="indicator"></div>
+  <div class="outline"></div>
 </label>
 
 <style>
   .switch {
+    position: relative;
     width: 42px;
     height: 28px;
     background-color: var(--border-color);
@@ -27,6 +29,18 @@
   .switch.active {
     background-color: var(--active-color);
   }
+  input.checkbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  input.checkbox:checked + .indicator {
+    transform: translate(14px);
+  }
+  input:focus-visible + * + .outline {
+    outline: 2px solid var(--active-color);
+    outline-offset: 2px;
+  }
   .indicator {
     width: 24px;
     height: 24px;
@@ -34,10 +48,11 @@
     background-color: var(--white-color);
     transition: all 0.25s ease-in-out;
   }
-  input {
-    display: none;
-  }
-  input:checked + .indicator {
-    transform: translate(14px);
+  .outline {
+    position: absolute;
+    border-radius: 14px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
   }
 </style>
