@@ -36,7 +36,7 @@
 </script>
 
 {#if opened}
-  <div class="modal-background" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }} aria-hidden={true}></div>
+  <div class="modal-background" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}></div>
 {/if}
 
 <div class="flex-center">

@@ -41,6 +41,7 @@
     color: var(--active-color);
   }
   .spoiler-toggle-icon {
+    height: 1.5rem;
     transition: transform var(--duration, 0.5s);
   }
   .spoiler-toggle-icon.shown {
