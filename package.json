@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/ya-erm/svelte-ui.git"
   },
-  "version": "0.0.11",
+  "version": "0.0.12",
   "scripts": {
     "dev": "vite dev --port 5172",
     "build": "vite build && npm run package",
@@ -30,12 +30,21 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    },
     "./utils": {
       "types": "./dist/utils/index.d.ts",
       "svelte": "./dist/utils/index.js"
     },
     "./toasts": {
-      "types": "./dist/ui/toasts/index.d.ts"
+      "types": "./dist/ui/toasts/index.d.ts",
+      "svelte": "./dist/ui/toasts/index.js"
     },
     "./toasts/Toasts": {
       "types": "./dist/ui/toasts/Toasts.svelte.d.ts",
