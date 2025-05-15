@@ -48,11 +48,6 @@
     ref?.style.setProperty('padding-right', endSlotWidth ? `${endSlotWidth}px` : '0.75rem');
   };
 
-  const handleChange = (e: Event) => {
-    value = (e.target as HTMLInputElement).value;
-    onChange?.(value);
-  };
-
   const clearValue = () => {
     value = '';
     onChange?.('');
@@ -91,8 +86,9 @@
     </div>
     <input
       class="input"
+      bind:value
       bind:this={ref}
-      on:input={handleChange}
+      on:input={() => onChange?.(value ?? '')}
       autocomplete={autocomplete ? 'on' : undefined}
       step={type === 'number' ? step : undefined}
       type={type === 'color' ? 'text' : type}
@@ -108,7 +104,6 @@
       {inputmode}
       {required}
       {disabled}
-      {value}
       {list}
       {name}
       {...$$restProps}
