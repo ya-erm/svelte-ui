@@ -39,7 +39,7 @@
   <div class="modal-background" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}></div>
 {/if}
 
-<div class="flex-center">
+<div class="container flex-center w-full absolute">
   <dialog
     class="modal"
     open={opened}
@@ -61,6 +61,11 @@
 </div>
 
 <style>
+  .container {
+    top: 50%;
+    left: 0;
+  }
+
   dialog {
     color: var(--primary-text-color);
   }

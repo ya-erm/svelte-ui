@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/ya-erm/svelte-ui.git"
   },
-  "version": "0.0.14",
+  "version": "0.0.15",
   "scripts": {
     "dev": "vite dev --port 5172",
     "build": "vite build && npm run package",
